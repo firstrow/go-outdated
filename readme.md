@@ -27,7 +27,7 @@ go-outdated -token=YOUR_PRIVATE_GITHUB_TOKEN
 Yes, typing each time access token in command-line is not easy. Use git config to re-use token:
 ``` bash
 git config --global github.token YOUR_PRIVATE_GITHUB_TOKEN
-go-outdate # token will be taken from git config
+go-outdated # token will be taken from git config
 ```
 Github doc: https://github.com/blog/180-local-github-config
 
