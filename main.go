@@ -59,7 +59,7 @@ func (g *githubPackage) GithubLastCommitDate() (time.Time, error) {
 	resp, err := client.Do(req)
 
 	if err != nil {
-		log.Fatal(err)
+		return time.Time{}, errors.New("Github request error.")
 	}
 
 	if resp.StatusCode != 200 {
