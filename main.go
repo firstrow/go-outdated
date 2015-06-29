@@ -3,18 +3,18 @@ package main
 import (
 	"encoding/json"
 	"errors"
+	"flag"
 	"fmt"
 	"go/build"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"strings"
 	"time"
 
-	"flag"
 	"github.com/Unknwon/com"
 	"github.com/mgutz/ansi"
-	"io/ioutil"
 )
 
 type githubPackage struct {
