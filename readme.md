@@ -22,7 +22,8 @@ GitHub API has requests limit. You should create access token and pass it to `go
 ``` bash
 go-outdated -token=YOUR_PRIVATE_GITHUB_TOKEN
 ```
-How to create tokens: https://help.github.com/articles/creating-an-access-token-for-command-line-use/
+How to create tokens:  
+https://help.github.com/articles/creating-an-access-token-for-command-line-use/
 
 ## Aliases
 Yes, typing each time access token in command line is not easy. You can create command line alias in your `.zshrc` or `.bashrc` files. Example:
