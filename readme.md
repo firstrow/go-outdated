@@ -42,8 +42,8 @@ alias go-outdated='go-outdated -token=YOUR_PRIVATE_GITHUB_TOKEN'
 - Refactor
 
 ## Links
-How-to create API tokens: https://help.github.com/articles/creating-an-access-token-for-command-line-use/
-See also GUI alternative: https://github.com/shurcooL/Go-Package-Store
+How-to create API tokens: https://help.github.com/articles/creating-an-access-token-for-command-line-use/  
+See also GUI alternative: https://github.com/shurcooL/Go-Package-Store  
 
 ## License:
 The MIT License (MIT) 
