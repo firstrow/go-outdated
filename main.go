@@ -17,6 +17,16 @@ import (
 	"github.com/mgutz/ansi"
 )
 
+type branchInfo struct {
+	Commit struct {
+		Commit struct {
+			Author struct {
+				Date string `json:"date"`
+			} `json:"committer"`
+		} `json:"commit"`
+	} `json:"commit"`
+}
+
 type githubPackage struct {
 	ImportName string
 	parent     string
@@ -186,16 +196,6 @@ func extractUsernameAndRepository(imp string) (string, string, error) {
 		return parts[1], parts[2], nil
 	}
 	return "", "", errors.New("Error extracting github username and repository")
-}
-
-type branchInfo struct {
-	Commit struct {
-		Commit struct {
-			Author struct {
-				Date string `json:"date"`
-			} `json:"committer"`
-		} `json:"commit"`
-	} `json:"commit"`
 }
 
 var accessToken string
