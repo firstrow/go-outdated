@@ -31,6 +31,10 @@ Yes, typing each time access token in command line is not easy. You can create c
 alias go-outdated='go-outdated -token=YOUR_PRIVATE_GITHUB_TOKEN'
 ```
 
+## Todo
+- Cache
+- Refactor
+
 ## License:
 The MIT License (MIT) 
 http://opensource.org/licenses/MIT
