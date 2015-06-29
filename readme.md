@@ -24,7 +24,7 @@ go-outdated -token=YOUR_PRIVATE_GITHUB_TOKEN
 ```
 
 ## Re-entering API token
-Yes, typing each time access token in command-line is not easy. Use git config to re-use you token:
+Yes, typing each time access token in command-line is not easy. Use git config to re-use token:
 ``` bash
 git config --global github.token YOUR_PRIVATE_GITHUB_TOKEN
 go-outdate # token will be taken from git config
