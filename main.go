@@ -20,7 +20,7 @@ import (
 type branchInfo struct {
 	Commit struct {
 		Commit struct {
-			Author struct {
+			Commiter struct {
 				Date string `json:"date"`
 			} `json:"committer"`
 		} `json:"commit"`
@@ -88,7 +88,7 @@ func (g *githubPackage) GithubLastCommitDate() (time.Time, error) {
 		return time.Time{}, errors.New("Error parse json")
 	}
 
-	t, err := time.Parse(time.RFC3339, branchInfo.Commit.Commit.Author.Date)
+	t, err := time.Parse(time.RFC3339, branchInfo.Commit.Commit.Commiter.Date)
 	if err != nil {
 		return time.Time{}, errors.New("Error parse github response date")
 	}
@@ -198,7 +198,22 @@ func extractUsernameAndRepository(imp string) (string, string, error) {
 	return "", "", errors.New("Error extracting github username and repository")
 }
 
+func getGihubTokenFromConfig() string {
+	stdout, _, _ := com.ExecCmd("git", "config", "--global", "github.token")
+	return strings.TrimSpace(stdout)
+}
+
 var accessToken string
+
+func setAccessToken() {
+	flag.StringVar(&accessToken, "token", "", "GitHub Access Token")
+	flag.Parse()
+
+	// If token not present, try to use token from git config
+	if accessToken == "" {
+		accessToken = getGihubTokenFromConfig()
+	}
+}
 
 func main() {
 	cwd, err := os.Getwd()
@@ -210,8 +225,7 @@ func main() {
 		log.Fatalln("Error importing current package:", err)
 	}
 
-	flag.StringVar(&accessToken, "token", "", "GitHub Access Token")
-	flag.Parse()
+	setAccessToken()
 
 	var packages = make(packagesList, 0)
 	findImports(packages, pkg.ImportPath)
