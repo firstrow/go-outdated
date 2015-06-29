@@ -5,7 +5,7 @@ Go-outdated helps to find outdated packages hosted on github.com in your golang 
 ![Dashboard](https://raw.githubusercontent.com/firstrow/go-outdated/master/sample.png)
 
 ## Installation
-Install the library with as usual:
+Install the library with:
 ``` bash
 go get -u github.com/firstrow/go-outdated
 ```
