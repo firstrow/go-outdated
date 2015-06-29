@@ -2,7 +2,7 @@
 
 Go-outdated helps to find outdated packages hosted on github.com in your golang project.
 
-![Dashboard](https://raw.githubusercontent.com/firstrow/go-outdadated/master/sample.png)
+![Dashboard](https://raw.githubusercontent.com/firstrow/go-outdated/master/sample.png)
 (sample-image)
 
 ## Installation
