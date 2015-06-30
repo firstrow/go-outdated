@@ -1,6 +1,6 @@
 # go-outdated
 
-Go-outdated helps to find outdated packages hosted on github.com in your golang project.
+Go-outdated is minimalistic library that helps to find outdated packages hosted on github.com in your golang project.
 
 ![Dashboard](https://raw.githubusercontent.com/firstrow/go-outdated/master/sample.png)
 
@@ -43,7 +43,10 @@ alias go-outdated='go-outdated -token=YOUR_PRIVATE_GITHUB_TOKEN'
 
 ## Links
 How-to create API tokens: https://help.github.com/articles/creating-an-access-token-for-command-line-use/  
-See also GUI alternative: https://github.com/shurcooL/Go-Package-Store  
+
+## Alternatives:
+https://github.com/shurcooL/Go-Package-Store  
+https://github.com/divan/gofresh
 
 ## License:
 The MIT License (MIT) 
