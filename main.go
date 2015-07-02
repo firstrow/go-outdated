@@ -92,8 +92,6 @@ func (g *githubPackage) GithubLastCommitDate() (time.Time, error) {
 	if err != nil {
 		return time.Time{}, errors.New("Error parse github response date")
 	}
-	// Don't spam
-	time.Sleep(time.Millisecond * 100)
 	return t, nil
 }
 
