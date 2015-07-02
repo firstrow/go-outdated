@@ -67,6 +67,7 @@ func (g *githubPackage) GithubLastCommitDate() (time.Time, error) {
 	req, err := http.NewRequest("GET", url, nil)
 	req.Header.Add("Time-Zone", "UTC")
 	resp, err := client.Do(req)
+	defer resp.Body.Close()
 
 	if err != nil {
 		return time.Time{}, errors.New("Github request error.")
@@ -77,7 +78,6 @@ func (g *githubPackage) GithubLastCommitDate() (time.Time, error) {
 	}
 
 	body, err := ioutil.ReadAll(resp.Body)
-	defer resp.Body.Close()
 	if err != nil {
 		return time.Time{}, errors.New("Error reading response body")
 	}
