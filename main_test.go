@@ -8,13 +8,13 @@ func TestGithubExtractUsernameAndRepository(t *testing.T) {
 	imp := "github.com/username/repo/path"
 	username, repo, err := extractUsernameAndRepository(imp)
 	if err != nil {
-		t.Error("Shoud return username and repo but returned error")
+		t.Error("Should return username and repo but returned error")
 	}
 	if username != "username" {
-		t.Error("Shoud return username but returned", username)
+		t.Error("Should return username but returned", username)
 	}
 	if repo != "repo" {
-		t.Error("Shoud return repo but returned", repo)
+		t.Error("Should return repo but returned", repo)
 	}
 }
 
