@@ -59,9 +59,8 @@ func (p packagesList) Exclude(pattern string) packagesList {
 
 // Get last commit date from Github
 func (g *githubPackage) GithubLastCommitDate() (time.Time, error) {
-	branch := "master"
-	url := fmt.Sprintf("https://api.github.com/repos/%s/%s/branches/%s?access_token=%s",
-		g.username, g.repository, branch, accessToken)
+	url := fmt.Sprintf("https://api.github.com/repos/%s/%s/branches/master?access_token=%s",
+		g.username, g.repository, accessToken)
 
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
