@@ -1,4 +1,4 @@
-# go-outdated
+# This project is not supported anymore
 
 Go-outdated is minimalistic library that helps to find outdated packages hosted on github.com in your golang project.
 
